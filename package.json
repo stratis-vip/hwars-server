@@ -2,9 +2,12 @@
   "name": "hwars-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": ".src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon",
+    "build": "rimraf ./build tsc",
+    "start": "npm run build && node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/stratis-vip/hwars-server/issues"
   },
-  "homepage": "https://github.com/stratis-vip/hwars-server#readme"
+  "homepage": "https://github.com/stratis-vip/hwars-server#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "express": "^4.21.2",
+    "graphql": "^16.10.0"
+  },
+  "type": "module"
 }
